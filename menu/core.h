@@ -7,7 +7,6 @@ class core{
   int polarity;
   int error;
 
-  
   core(void);
   void update(void);
 };

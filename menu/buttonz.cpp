@@ -2,15 +2,11 @@
 #include <arduino.h>
 #include "telemetry_com.h"
 
-
-
-
 Buttonz::Buttonz(unsigned char sw_pin, unsigned long sw_delay) {
   pin = sw_pin;
   press_time = sw_delay;
   state = BTN_NON_PRESSED;
 }
-
 
 void Buttonz::init(void) {
   pinMode(pin, INPUT_PULLUP);
