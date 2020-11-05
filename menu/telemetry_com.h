@@ -27,7 +27,7 @@
 #define CMD_SET_DEF_GATEWAY_ID 16
 #define REQ_SET_DEF_GATEWAY_ID 17
 #define CMD_SET_IDN_ID 18
-#define CMD_IN_START_ID 19
+
 
 
 

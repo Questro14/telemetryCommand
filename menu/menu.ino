@@ -71,16 +71,11 @@ void loop() {
       break;
 
   }
-  lcd.setCursor(14, 0);
-  lcd.print("OK");
 
   ////////////Лево///////////////////
   if (btn1.state == BTN_PRESSED) { // если нажата 1 кнопка(левая кнопка)
     //задаем значение положения курсора
     if (corsor_pos == 1) {
-      corsor_pos = 3;
-    }
-    else if (corsor_pos == 3) {
       corsor_pos = 2;
     }
     else if (corsor_pos == 2) {
@@ -96,9 +91,6 @@ void loop() {
       corsor_pos = 2;
     }
     else if (corsor_pos == 2) {
-      corsor_pos = 3;
-    }
-    else if (corsor_pos == 3) {
       corsor_pos = 1;
     }
     btn3.state = BTN_CHECKED;
@@ -114,14 +106,6 @@ void loop() {
       case 2:
         ++my_core.polarity; // задаем полярность
         break;
-      case 3: // когда курсор в положении "ОК"
-        //"ОК"
-        lcd.clear();
-        lcd.setCursor(5, 0);
-        lcd.print("START");
-        delay(2000);
-        break;
-
     }
     btn2.state = BTN_CHECKED;
   }
@@ -162,14 +146,6 @@ void loop() {
         my_core.polarity = 2;
         Serial.println("7");
         break;
-      case CMD_IN_START_ID:
-        lcd.clear();
-        lcd.setCursor(5, 0);
-        lcd.print("START");
-        delay(2000);
-
-        Serial.println("12");
-        break;
       case REQ_SET_MAC_ADDR_ID:
         text = String(cur_mac[0], HEX) + ":" +  String(cur_mac[1], HEX) + ":" +  String(cur_mac[2], HEX) + ":" +  String(cur_mac[3], HEX) + ":" +  String(cur_mac[4], HEX) + ":" +  String(cur_mac[5], HEX);
         send_str_to_lan(&text);
@@ -208,25 +184,13 @@ void printCorsor(uint8_t str) {  // функция отрисовки курсо
     case 1:
       lcd.setCursor(0, 1);
       lcd.print(" ");
-      lcd.setCursor(13, 0);
-      lcd.print(" ");
       lcd.setCursor(0, 0);
       lcd.print(">");
       break;
     case 2:
       lcd.setCursor(0, 0);
       lcd.print(" ");
-      lcd.setCursor(13, 0);
-      lcd.print(" ");
       lcd.setCursor(0, 1);
-      lcd.print(">");
-      break;
-    case 3:
-      lcd.setCursor(0, 0);
-      lcd.print(" ");
-      lcd.setCursor(0, 1);
-      lcd.print(" ");
-      lcd.setCursor(13, 0);
       lcd.print(">");
       break;
   }

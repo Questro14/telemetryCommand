@@ -79,10 +79,7 @@ char check_cmd(unsigned char *cmd_id, unsigned char *parameter) {
     return ERR_NO_ERROR;
   }
   
-  if (compStr(rx_buf, CMD_IN_START)) {
-    *cmd_id = CMD_IN_START_ID;
-    return ERR_NO_ERROR;
-  }
+
   if (compStr(rx_buf, CMD_IN_SELECT1)) {
     *cmd_id = CMD_IN_SELECT1_ID;
     return ERR_NO_ERROR;

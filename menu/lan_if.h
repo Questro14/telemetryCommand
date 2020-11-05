@@ -6,7 +6,6 @@
 
 #define def_tcp_port 5025
 
-const char CMD_IN_START[] = "INPUT:START ";
 const char REQ_IDN[] = "*IDN?";
 const char CMD_SET_IDN[] = "SYSTEM:CONFIG:IDN ";
 const char CMD_SET_IP_ADDR[] = "SYSTEM:IPADDRESS ";
